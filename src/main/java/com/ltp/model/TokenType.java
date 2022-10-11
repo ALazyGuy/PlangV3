@@ -6,7 +6,8 @@ public enum TokenType {
     STAR("*"),
     SLASH("/"),
     INTEGER("I_N"),
-    DOUBLE("D_N");
+    DOUBLE("D_N"),
+    EOF("EOF");
 
     private final String TOKEN_ID;
 
