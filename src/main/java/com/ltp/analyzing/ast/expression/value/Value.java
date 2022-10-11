@@ -13,6 +13,10 @@ public final class Value {
         this.data = data;
     }
 
+    public Value copy() {
+        return new Value(type, data);
+    }
+
     public enum ValueType {
         INTEGER, DOUBLE, STRING, NULL, VOID
     }

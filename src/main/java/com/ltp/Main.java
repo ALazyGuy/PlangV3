@@ -11,7 +11,7 @@ import java.util.List;
 public class Main {
     public static void main(String[] args) {
         final List<String> lines = List.of(
-                "2.2 22"
+                "+2.2 -22"
         );
 
         final Lexer lexer = new Lexer(lines);

@@ -2,6 +2,7 @@ package com.ltp.analyzing;
 
 import com.ltp.analyzing.ast.expression.Expression;
 import com.ltp.analyzing.ast.expression.NumberExpression;
+import com.ltp.analyzing.ast.expression.UnaryExpression;
 import com.ltp.model.Token;
 import com.ltp.model.TokenType;
 
@@ -26,6 +27,19 @@ public class Parser {
     }
 
     private Expression expression() {
+        return unary();
+    }
+
+    private Expression unary() {
+
+        if(match(TokenType.PLUS)){
+            return new UnaryExpression(primary(), '+');
+        }
+
+        if(match(TokenType.MINUS)){
+            return new UnaryExpression(primary(), '-');
+        }
+
         return primary();
     }
 
